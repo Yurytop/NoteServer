@@ -5,7 +5,7 @@ const middlewares = jsonServer.defaults()
 const cors = require("cors")
 
 
-server.use(cors())
+server.use(cors({origin:'*'}))
 server.use(middlewares)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
