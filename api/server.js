@@ -3,7 +3,8 @@ const server = jsonServer.create()
 const router = jsonServer.router('notes.json')
 const middlewares = jsonServer.defaults()
 const cors = require("cors");
-app.use(cors());
+
+server.use(cors());
 
 server.use(middlewares)
 server.use(jsonServer.rewriter({
