@@ -1,11 +1,8 @@
 const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('notes.json')
-const middlewares = jsonServer.defaults()
-const cors = require("cors")
+const middlewares = jsonServer.defaults({noCors: true})
 
-
-server.use(cors({origin:'*'}))
 server.use(middlewares)
 server.use(jsonServer.rewriter({
     '/api/*': '/$1',
