@@ -2,7 +2,7 @@ const jsonServer = require('json-server')
 const server = jsonServer.create()
 const router = jsonServer.router('notes.json')
 const middlewares = jsonServer.defaults()
-const cors = require('cors');
+// const cors = require('cors');
 
 server.use(middlewares)
         
@@ -12,12 +12,12 @@ server.use(jsonServer.rewriter({
 }))
 server.use(router);
 
-server.use(cors({
-  origin: true,
-  credentials : true,
-  preflightContinue: false,
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS'
-}));
+// server.use(cors({
+//   origin: true,
+//   credentials : true,
+//   preflightContinue: false,
+//   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS'
+// }));
 
 server.options('*', cors());
 
