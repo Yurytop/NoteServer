@@ -11,6 +11,9 @@ server.use(cors({
   preflightContinue: false,
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
 }));
+
+server.options('*', cors());
+
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://notes-mauve-mu.vercel.app');
   res.header('Access-Control-Allow-Methods', '*');
