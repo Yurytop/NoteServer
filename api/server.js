@@ -5,7 +5,12 @@ const middlewares = jsonServer.defaults()
 const cors = require('cors');
 
         
-server.use(cors({credentials : true, origin : ['https://notes-mauve-mu.vercel.app']}));
+server.use(cors({
+  origin: true,
+  credentials : true,
+  preflightContinue: false,
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE'
+}));
 server.use((req, res, next) => {
   res.header('Access-Control-Allow-Origin', 'https://notes-mauve-mu.vercel.app');
   res.header('Access-Control-Allow-Methods', '*');
