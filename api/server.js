@@ -19,7 +19,7 @@ server.use(router);
 //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS'
 // }));
 
-server.options('*', cors());
+// server.options('*', cors());
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
