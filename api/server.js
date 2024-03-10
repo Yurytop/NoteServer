@@ -8,6 +8,7 @@ const router = jsonServer.router(path.resolve(os.tmpdir() + "/notes.json"));
 const middlewares = jsonServer.defaults()
 const cors = require('cors');
 
+
 fs.copyFile("notes.json", os.tmpdir() + "/notes.json", function (err) {
   if (err) console.log(err);
   else console.log("copy file succeed to" + os.tmpdir());
