@@ -1,8 +1,17 @@
 const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('tmp/notes.json')
+const fs = require("fs");
+const os = require("os");
+const path = require("path");
+const server = jsonServer.create();
+const router = jsonServer.router(path.resolve(os.tmpdir() + "/notes.json"));
+
 const middlewares = jsonServer.defaults()
 const cors = require('cors');
+
+fs.copyFile("notes.json", os.tmpdir() + "/notes.json", function (err) {
+  if (err) console.log(err);
+  else console.log("copy file succeed to" + os.tmpdir());
+});
 
 server.use(middlewares)
         
