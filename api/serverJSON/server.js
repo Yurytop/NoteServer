@@ -1,6 +1,6 @@
 const jsonServer = require('json-server')
 const server = jsonServer.create()
-const router = jsonServer.router('notes.json')
+const router = jsonServer.router('serverJSON/notes.json')
 const middlewares = jsonServer.defaults()
 const cors = require('cors');
 
